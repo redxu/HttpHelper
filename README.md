@@ -1,2 +1,4 @@
 # HttpHelper
-a simple c# http client use HttpWebRequest
+基于HttpWebRequest的Http客户端
+特性:
+*支持跨域Cookies
