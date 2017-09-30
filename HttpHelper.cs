@@ -363,7 +363,11 @@ namespace RedXuCSharpClass
 				if(_cookiecollection != null)
 				{
 					foreach(Cookie c in _cookiecollection)
+					{
 						c.Domain = request.Host;
+						if(c.Domain.IndexOf(':') > 0)
+							c.Domain = c.Domain.Remove(c.Domain.IndexOf(':'));
+					}
 					request.CookieContainer.Add(_cookiecollection);
 				}
 
@@ -434,7 +438,7 @@ namespace RedXuCSharpClass
 					{
 						string cname = cookiesarray_3[0].Trim();
 						string cvalue = cookiesarray_3[1].Trim();
-						if(cname != "domain" && cname != "path" && cname != "expires")
+						if(cname.ToLower() != "domain" && cname.ToLower() != "path" && cname.ToLower() != "expires")
 						{
 							Cookie c = new Cookie(cname,cvalue);
 							cc.Add(c);
