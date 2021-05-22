@@ -36,7 +36,7 @@ namespace RedXuCSharpClass
 		//接受类型
 		private String _accept = "text/html, application/xhtml+xml, application/xml, */*";
 		//超时时间
-		private int _timeout = 30*1000;
+		private int _timeout = 30000;
 		//类型
 		private string _contenttype = "application/x-www-form-urlencoded";
 		//cookies
